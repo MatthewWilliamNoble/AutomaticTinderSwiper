@@ -12,7 +12,7 @@ The `pyautogui` library was really cool and I have been enjoying learning more a
 
 ## Installation and Requirements
 
-This script utilizes Python3, Selenium, and the Google Chrome webdriver.
+This script utilizes Python3, Selenium, and the Google Chrome webdriver. Python3 and Selenium can be downloaded to your environment using `PiP`, but the Google Chrome webdriver I had to download (and append to my `PATH`) separately. More information on them is available here:
 
 Python3 can be found [here](https://www.python.org/downloads/).
 
@@ -22,18 +22,18 @@ Google Chrome webdriver will be required with Selenium. This can be found [here]
 
 ## ScriptFlow - V1
 
-* Navigate to Facebook.com and login using username and password.
+* Navigate to Facebook.com and login using your provided username and password.
 * Navigate to Tinder.com and login via Facebook SSO.
 * Pass through the various tutorial screens.
 * Swipe right on every profile until no profiles are remaining.
 * The script quits and the browser is closed.
 
-## Ideas for V2
+## Ideas and Improvements for V2
 
-- [ ] Upon a match, a pop-up appears. This needs to be accounted for as additional logic to return to the profile viewer and continue swiping. V1 currently quits following a match.
-- [ ] Pause and end on console input. Currently the script swipes right whilst a profile can be swiped right to. A method to pause or stop based on the console inputs would therefore be useful.
+- [ ] Upon a match, a new pop-up window appears. This needs to be accounted for as additional logic to return to the profile viewer and continue swiping. V1 currently quits following a match.
+- [ ] Pause and end on console input. Currently the script swipes right whilst a profile can be swiped right. A method to pause or stop based on the console inputs would therefore be more useful.
 - [ ] Random time insertion. Currently the script clicks every `0.2` seconds. Whilst this feels like a normal human interaction / speed, this may raise the suspicions of bot checkers being so perfect. A random time should therefore be implemented throughout to prevent this.
 
-## Ideas for V3
+## Ideas and Improvements for V3
 - [ ] Additional logic to analyse profile pictures.
 - [ ] Additional logic to analyse profile text.
