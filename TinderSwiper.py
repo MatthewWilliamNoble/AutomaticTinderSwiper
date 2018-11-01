@@ -29,29 +29,29 @@ class Swiper():
 
         # Navigate to Facebook.
         print("Login to Facebook.")
-        self.driver.get('https://www.facebook.com/')
+        self.driver.get("https://www.facebook.com/")
 
         time.sleep(3)
 
         # Insert email address.
         print("Entering username.")
-        a = self.driver.find_element_by_id('email')
+        a = self.driver.find_element_by_id("email")
         EmailAddress = "<YOUR EMAIL ADDRESS>"  # Hardcode email for speed.
         a.send_keys(EmailAddress)
-        # a.send_keys(input('Opened Facebook. Please enter username/email: ')) # Accept email address from the console.
+        # a.send_keys(input("Opened Facebook. Please enter username/email: ")) # Accept email address from the console.
         print("Username entered. Moving on to password.")
 
         # Insert password.
         print("Entering password.")
-        b = self.driver.find_element_by_id('pass')
-        Password = '<YOUR PASSWORD>' # Hardcode password for speed.
+        b = self.driver.find_element_by_id("pass")
+        Password = "<YOUR PASSWORD>" # Hardcode password for speed.
         b.send_keys(Password)
-        # b.send_keys(getpass(prompt='Username entered. Please enter password: ')) # Accept password from the console.
+        # b.send_keys(getpass(prompt="Username entered. Please enter password: ")) # Accept password from the console.
         print("Password entered. Logging in.")
 
         # Click on the Facebook login button.
         print("Clicking the login button.")
-        c = self.driver.find_element_by_id('loginbutton')
+        c = self.driver.find_element_by_id("loginbutton")
         c.click()
 
         # Check whether Facebook login was successful by finding the home button.
@@ -59,7 +59,7 @@ class Swiper():
         print("Confirming Facebook login.")
 
         try: 
-            self.driver.find_element_by_id('u_0_c')
+            self.driver.find_element_by_id("u_0_c")
         except:
             return False
         return True
@@ -70,7 +70,7 @@ class Swiper():
         Login to Tinder using the previos Facebook login as a SSO.
         """
         # Navigate to Tinder and wait for the page to load fully.
-        self.driver.get('https://tinder.com')
+        self.driver.get("https://tinder.com")
         time.sleep(5)
         print("Clicking on sign in with Facebook.")
 
@@ -83,14 +83,14 @@ class Swiper():
             print("Dismissing tutorial prompts")
 
             print("Prompt 1 - Location")
-            self.driver.find_element_by_xpath('//*[@id="content"]/div/span/div/div[2]/div/div/div[3]/button[1]').click()
+            self.driver.find_element_by_xpath("//*[@id=\"content\"]/div/span/div/div[2]/div/div/div[3]/button[1]").click()
             time.sleep(1)
 
             print("Prompt 2 - Notifications")
-            self.driver.find_element_by_xpath('//*[@id="content"]/div/span/div/div[2]/div/div/div[3]/button[1]').click()
+            self.driver.find_element_by_xpath("//*[@id=\"content\"]/div/span/div/div[2]/div/div/div[3]/button[1]").click()
             time.sleep(1)
         except:
-            print('Something went wrong during login.')
+            print("Something went wrong during login.")
             return False
         print("Ready to start swiping.")
         return True
@@ -108,8 +108,8 @@ class Swiper():
 
         # Swipe right to anything and everything. Stop swiping by catching the exception of not finding a profile. Upon exception, close the browser.
         try:
-            while self.driver.find_element_by_xpath('//*[@id="content"]/div/span/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[4]'):
-                self.driver.find_element_by_xpath('//*[@id="content"]/div/span/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[4]').click()
+            while self.driver.find_element_by_xpath("//*[@id=\"content\"]/div/span/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[4]"):
+                self.driver.find_element_by_xpath("//*[@id=\"content\"]/div/span/div/div[1]/div/main/div[1]/div/div/div[1]/div/div[2]/button[4]").click()
                 time.sleep(0.2)
         except:
             print("No more profiles found. Quitting.")
